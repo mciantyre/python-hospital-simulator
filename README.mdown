@@ -1,0 +1,123 @@
+## Hospital simulator
+
+Welcome to the hospital simulator! Follow the instructions in this file and in the comments of the Python files to complete the assignment.
+
+**You will need**
+
+- Python >= 3.4
+- Know how to use the command line / terminal (only `cd` and `pwd`)
+- A very basic knowledge of programming
+
+### 1. Make a person
+
+Modify the code in `person.py`. Both a patient and a doctor are a type of person. So, we define the 
+general behavior of a person in here, and it extends to any type of person, be it a patient or a doctor. Essentially, all people have names and jobs.
+
+Give the person the ability to say his name. Then, patients and doctors can say say their names, too.
+
+When you're done editing the person, run the tests to check your work.
+
+1. Change directory to the same directory as this file
+2. Run the command `python person.py` to execute the tests
+3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+
+### 2. Make a patient
+
+Modify the code in `patient.py`. A patient a special type of person. He has a condition, a condition priority level, and an insurance boolean. A condition is one of the following strings:
+
+```
+    "Broken arm"
+    "Cancer"
+    "Stomach pain"
+    "Kidney issues"
+```
+
+These match up with what the doctors are able to fix. You don't have to worry about where these come from! They become important in the hospital later. You just need to make sure that patients can say whatever condition they have.
+
+When you're done editing the patient, run the tests to check your work.
+
+1. Change directory to the same directory as this file
+2. Run the command `python patient.py` to execute the tests
+3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+
+### 3. Make a doctor
+
+Modify the code in `doctor.py`. A doctor is a type of person. His speciality is one of the following strings:
+
+```
+    "Emergency medicine"
+    "Oncologist"
+    "Gastroenterologist"
+    "Urologist"
+```
+
+These match up to the patients' conditions. The doctor's speciality will be returned in the `get_occupation` method. You don't need to worry about where these come from! They become important in the hospital later.
+
+Doctors can be with patients, they can be assigned patients by the hospital, and they can say whether they are with or not with a patient.
+
+When you're done editing the doctor, run the tests to check your work.
+
+1. Change directory to the same directory as this file
+2. Run the command `python doctor.py` to execute the tests
+3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+
+### 4. Make a hospital
+
+Here comes the hard part. You're going to program the hospital simulator.
+Here's how it should work:
+
+`on_doctor_called` passes in a doctor. It means that the doctor has been called
+to help waiting patients. She may or may not already be with a patient, and
+you'll need to check for that (remember the `is_with_patient()` function). If she
+is busy, she cannot help any of the patients in the waiting room.
+
+If the doctor is not busy, she can only help certain patients in the waiting
+room. For instance, if her occupation is "Oncologist", she can only help patients
+with the "Cancer" condition. The mapping of patient conditions to doctor
+occupations is below.
+
+```
+    "Broken arm": "Emergency medicine",
+    "Cancer": "Oncologist",
+    "Stomach pain": "Gastroenterologist",
+    "Kidney issues": "Urologist"
+```
+
+If there are no patients that the doctor can help, she goes into the list of
+waiting doctors. If there is a patient that the doctor can help, the doctor
+should be assigned that patient, and that patient should be removed from the
+waiting room. The doctor should never enter the waiting list if she is helping
+a patient.
+
+`on_patient_visit` passes in a patient. It means that a sick patient has come to
+get help from a doctor. The patient may or may not be insured. If he is not
+insured, he should be turned away and not have the chance to see a doctor.
+
+If the patient is insured, he should be matched up with an available doctor who
+can help with his condition. Remember the mapping of conditions to doctor
+specialities above. If there is a doctor available, the patient should be
+assigned to the doctor, and he should not enter the waiting room. Additionally,
+The doctor who is helping the patient should be removed from the list of waiting
+doctors.
+
+If there are no doctors that can help the patient, the patient should enter the 
+waiting room for the next available doctor.
+
+Remember the functions of the patients and doctors that you programmed earlier!
+You'll need them to get the necessary information from the doctors and patients
+that are passed into the hospital.
+
+Use flow control (`if` / `else` conditions, `for` / `while` loops) to help you. You
+may need to iterate through the list of waiting patients or waiting doctors. The
+tests for the hospital are at the bottom of this text file. As before, run
+the tests from the command line while in this directory.
+
+```
+python hospital.py
+```
+
+Feel free to go back and change your implementation of doctors and patients.
+However, as long as you passed the tests for doctors and patients, you shouldn't
+have to change anything with them. If you do change those classes, it would be
+beneficial to ensure that your implementations remain consistent by running the
+tests again.
