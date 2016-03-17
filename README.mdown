@@ -15,11 +15,7 @@ general behavior of a person in here, and it extends to any type of person, be i
 
 Give the person the ability to say his name. Then, patients and doctors can say say their names, too.
 
-When you're done editing the person, run the tests to check your work.
-
-1. Change directory to the same directory as this file
-2. Run the command `python person.py` to execute the tests
-3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+When you're done editing the person, run the tests to check your work. Click the "play" button in Spyder.
 
 ### 2. Make a patient
 
@@ -34,11 +30,7 @@ Modify the code in `patient.py`. A patient a special type of person. He has a co
 
 These match up with what the doctors are able to fix. You don't have to worry about where these come from! They become important in the hospital later. You just need to make sure that patients can say whatever condition they have.
 
-When you're done editing the patient, run the tests to check your work.
-
-1. Change directory to the same directory as this file
-2. Run the command `python patient.py` to execute the tests
-3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+When you're done editing the person, run the tests to check your work. Click the "play" button in Spyder.
 
 ### 3. Make a doctor
 
@@ -55,11 +47,7 @@ These match up to the patients' conditions. The doctor's speciality will be retu
 
 Doctors can be with patients, they can be assigned patients by the hospital, and they can say whether they are with or not with a patient.
 
-When you're done editing the doctor, run the tests to check your work.
-
-1. Change directory to the same directory as this file
-2. Run the command `python doctor.py` to execute the tests
-3. Look at the output from the command line. Did you pass all the tests? Did you fail any?
+When you're done editing the person, run the tests to check your work. Click the "play" button in Spyder.
 
 ### 4. Make a hospital
 
