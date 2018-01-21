@@ -2,3 +2,4 @@
 .ipython/
 .local/
 __pycache__/
+.jupyter/
